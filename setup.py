@@ -1,5 +1,5 @@
-import sys, subprocess
-from distutils.core import setup, Extension
+import os, sys, subprocess
+from setuptools import setup, Extension
 
 
 def pkgconfig(package, kw):
@@ -13,6 +13,8 @@ def pkgconfig(package, kw):
 USE_CYTHON = False
 if "--cython" in sys.argv:
     sys.argv.remove("--cython")
+    USE_CYTHON = True
+if os.environ.get("GBINDER_USE_CYTHON", default=None):
     USE_CYTHON = True
 
 file_ext = ".pyx" if USE_CYTHON else ".c"
