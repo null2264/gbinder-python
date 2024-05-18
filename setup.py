@@ -38,6 +38,5 @@ setup(
     author_email="erfangplus@gmail.com",
     url="https://github.com/erfanoabdi/gbinder-python",
     license="GPL3",
-    ext_modules=extensions,
-    install_requires=["Cython"],
+    ext_modules=extensions
 )
